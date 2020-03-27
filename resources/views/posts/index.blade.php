@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title', "Гавная страница сайта")
 
 @section('content')
     @if(isset($_GET['search']))
@@ -28,6 +29,7 @@
                     <h2 class="card-title">{{$post->title}}</h2>
                     <p class="card-text" hidden>{{ $post->descr }}</p>
                     <h5 class="card-author">Автор: {{$post->name}}</h5>
+                    <h5 class="card-date">Пост создан: {{$post->updated_at->diffForHumans()}}</h5>
                     <a href="{{route('post.show', ['id' => $post->post_id])}}" class="btn btn-outline-primary">Постмотреть пост - {{ $post->short_title }}</a>
 
                 </div>

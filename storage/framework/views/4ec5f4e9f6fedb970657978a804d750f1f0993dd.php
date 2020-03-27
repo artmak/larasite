@@ -1,3 +1,4 @@
+<?php $__env->startSection('title', "Post #$post->post_id. $post->title"); ?>
 <?php $__env->startSection('content'); ?>
     <div class="row">
 
@@ -9,7 +10,7 @@
                         <h2 class="card-title"><?php echo e($post->title); ?></h2>
                         <p class="card-text"><?php echo e($post->descr); ?></p>
                         <h3 class="card-author">Автор: <?php echo e($post->name); ?></h3>
-                        <h3 class="card-date">Пост создан: <?php echo e($post->created_at->diffForHumans()); ?></h3>
+                        <h3 class="card-date">Пост создан: <?php echo e($post->updated_at->diffForHumans()); ?></h3>
                         <a href="<?php echo e(route('post.index')); ?>" class="btn btn-outline-primary">Вернуться на главную</a>
                         <a href="<?php echo e(route('post.edit', ['id'=>$post->post_id])); ?>" class="btn btn-outline-success">Редактировать</a>
                         <form action="<?php echo e(route('post.destroy', ['id'=>$post->post_id])); ?>" method="post" onsubmit="if (confirm('Точно удалить пост?')){ return true} else { return false}">

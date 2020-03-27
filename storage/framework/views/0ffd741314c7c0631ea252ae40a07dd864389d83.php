@@ -1,3 +1,4 @@
+<?php $__env->startSection('title', "Создать новый пост"); ?>
 <?php $__env->startSection('content'); ?>
     <form action="<?php echo e(route('post.store')); ?>" method="post" enctype="multipart/form-data">
         <?php echo csrf_field(); ?>

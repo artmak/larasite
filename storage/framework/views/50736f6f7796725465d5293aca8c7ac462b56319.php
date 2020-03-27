@@ -1,3 +1,5 @@
+<?php $__env->startSection('title', "Гавная страница сайта"); ?>
+
 <?php $__env->startSection('content'); ?>
     <?php if(isset($_GET['search'])): ?>
 
@@ -27,6 +29,7 @@
                     <h2 class="card-title"><?php echo e($post->title); ?></h2>
                     <p class="card-text" hidden><?php echo e($post->descr); ?></p>
                     <h5 class="card-author">Автор: <?php echo e($post->name); ?></h5>
+                    <h5 class="card-date">Пост создан: <?php echo e($post->updated_at->diffForHumans()); ?></h5>
                     <a href="<?php echo e(route('post.show', ['id' => $post->post_id])); ?>" class="btn btn-outline-primary">Постмотреть пост - <?php echo e($post->short_title); ?></a>
 
                 </div>
